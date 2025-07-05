@@ -1,11 +1,12 @@
 import star from '../assets/star.svg'
 
 const MovieCard = ({ movie:
-  { title, vote_average, poster_path, release_date, original_language }
+  { title, vote_average, poster_path, release_date, original_language }, onClick
 }) => {
   return (
 
-    <div className="movie-card">
+    <div className="movie-card cursor-pointer hover:opacity-80 transition"
+      onClick={onClick}>
 
       <img src={poster_path ?
         `https://image.tmdb.org/t/p/w500/${poster_path}` : '/no-movie.png'}

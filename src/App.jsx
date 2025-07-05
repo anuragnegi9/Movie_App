@@ -85,6 +85,12 @@ const App = () => {
     loadTrendingMovies();
   }, []);
 
+  const handleMovieClick = (movie) => {
+    console.log("Movie clicked:", movie);
+
+  };
+
+
   return (
     <main>
       <div className="pattern" />
@@ -122,7 +128,7 @@ const App = () => {
           ) : (
             <ul>
               {movieList.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} />
+                <MovieCard key={movie.id} movie={movie} onClick={() => handleMovieClick(movie)} />
               ))}
             </ul>
           )}
